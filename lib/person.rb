@@ -15,13 +15,19 @@ class Person
     @zip_code = zip_code
   end
 
-  def introduce
-
+  def full_name
     if !@middle_name || @middle_name.empty?
-      full_name = "#{@first_name} #{@last_name}"
+      return "#{@first_name} #{@last_name}"
     else
-      full_name = "#{@first_name} #{@middle_name} #{@last_name}"
+      return "#{@first_name} #{@middle_name} #{@last_name}"
     end
+  end
+
+  def age
+    ((Date.today - @birthday).to_i / 365)
+  end
+
+  def introduce
 
     if !@apartment_number || @apartment_number.empty?
       address = "#{@street_address}, #{@zip_code}"
@@ -36,7 +42,7 @@ class Person
     puts address
     puts "------------"
     puts "Age:"
-    puts ((Date.today - @birthday).to_i / 365)
+    puts age
     puts "------------"
     puts "Account Info"
     puts @bank_name
@@ -45,9 +51,6 @@ class Person
     puts "Balance #{@bank_account_balance}"
   end
 
-  def make_deposit(amount)
-    @bank_account_balance += amount
-  end
 
 end
 

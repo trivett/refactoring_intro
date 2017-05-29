@@ -27,6 +27,8 @@ What does it mean?
 
 Not less code. Usually you end up with more, but its easier to understand and update.
 
+Before we begin I want to stress that though this little lesson will be delivered in Ruby, refactoring and recognizing code smells is a skill that will serve you in JavaScript, Java, Python or whatever language you happen to be working in. It's a programming skill, not a Ruby skill.
+
 #### 9:35
 
 > Do I need to refactor? 
@@ -69,7 +71,7 @@ Yeah this is clearly too much going on in one method. You can tell in just secon
 
 >  A class that knows way too much
 
-Are people born with exactly one bank account? Let's say wel wanted to include pin number, balance, interest rate, etc. That would currently have to go on Person. You can imagine that getting completely out of hand.
+Are people born with exactly one bank account? Let's say we wanted to include pin number, balance, interest rate, etc. That would currently have to go on Person. You can imagine that getting completely out of hand.
 
 >  Methods that are not reusable
 
@@ -106,9 +108,6 @@ Does it make sense for Person to respond to `age` and `full_name`? Yes it does.
 
 #### 9:50
 
-
-#### 9:55
-
 We pared down the verbs into their own things, but now let's look at the 900 pound gorilla here that I want to introduce: dealing with the nouns in your project. Can you find the obvious noun here hiding in plain sight on Person? 
 
 A Person isn't born knowing what their bank account is. Some have none. Some have more than one. Bank account should be separate from Person. We should be able to initialize a Person without a bank account.
@@ -116,7 +115,6 @@ A Person isn't born knowing what their bank account is. Some have none. Some hav
 We are going to do this through _composing_ our code into classes and dividing responsibility amongst them. Unlike inheritance, which is best pictured in terms of animal cladistics, (i.e. a cat *is a* mammal etc), composition involves relating things together, like cells that make tissues that make organs that make animals. 
 
 
-#### 10:00
 
 Code along and create a new Bank Account class. 
 
@@ -134,6 +132,9 @@ class BankAccount
   end
 end
 ```
+
+#### 10:00
+
 
 Remove the attrs and initializer for bank account on Person, comment out the bank account portion of 
 
@@ -188,5 +189,5 @@ Further practice to get those reps in:
 Introduce cash register app.
 
 
-Wrap up, check for understanding as to how recomposing the 
+Wrap up, check for understanding as to how recomposing the Person class made it better and easier to expand on.
 

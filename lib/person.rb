@@ -1,15 +1,11 @@
 class Person
-  attr_accessor :first_name, :middle_name, :last_name, :birthday, :bank_name, :bank_routing_number, :bank_account_number, :bank_account_balance, :street_address, :apartment_number, :zip_code
+  attr_accessor :first_name, :middle_name, :last_name, :birthday, :checking_account, :savings_account, :street_address, :apartment_number, :zip_code
 
-  def initialize(first_name, middle_name, last_name, birthday, bank_name, bank_routing_number, bank_account_number, bank_account_balance, street_address, apartment_number, zip_code)
+  def initialize(first_name, middle_name, last_name, birthday, street_address, apartment_number, zip_code)
     @first_name = first_name
     @middle_name = middle_name
     @last_name = last_name
     @birthday = Date.parse(birthday)
-    @bank_name = bank_name
-    @bank_routing_number = bank_routing_number
-    @bank_account_number = bank_account_number
-    @bank_account_balance = bank_account_balance
     @street_address = street_address
     @apartment_number = apartment_number
     @zip_code = zip_code
@@ -43,14 +39,15 @@ class Person
     puts "------------"
     puts "Age:"
     puts age
-    puts "------------"
-    puts "Account Info"
-    puts @bank_name
-    puts "Routing # #{@bank_routing_number}"
-    puts "Acct # #{@bank_account_number}"
-    puts "Balance #{@bank_account_balance}"
   end
 
+  def financials
+    puts "Savings:"
+    puts @savings_account
+    puts "Checking:"
+    puts @checking_account
+  end
+  
 
 end
 

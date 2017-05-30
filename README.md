@@ -32,3 +32,18 @@ We are going to take a horribly designed class, do a little of refactoring and a
 
 
 Keep in mind that since I am not your normal instructor I don't know everything that you have gone over already, so _please_ tell me if I show you something that you haven't seen yet! 
+
+If you get a little behind, don't worry, look at the other branches of this repo to see my solutions for each step in the lesson.
+
+
+##Help is out there
+
+Though I personally prefer against them, IDEs such as Ruby Mine and PyCharm from JetBrains offer built in advice such as pointing out bits that should be refactored. 
+
+For Ruby, there is a gem called [Rubocop](https://github.com/bbatsov/rubocop) which studies your code and points out uncleanliness. It's based on the widely followed [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide). Unlike Python, Ruby lacks a canonical set of rules regarding coding style, and some companies have their own style guides. It's a bit strict, but Rubocop provides food for thought when refactoring your code. Until your nose becomes adept at spotting code smells, you might have some luck with the [Reek](https://github.com/troessner/reek) gem.
+
+Some great books:
+
+* POODR by Sandi Metz
+* Refactoring -- Ruby Edition
+* Ruby Science by Thoughtbot

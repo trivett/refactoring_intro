@@ -45,9 +45,5 @@ class Person
     puts "Balance #{@bank_account_balance}"
   end
 
-  def make_deposit(amount)
-    @bank_account_balance += amount
-  end
-
 end
 
